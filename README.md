@@ -268,3 +268,125 @@ np.concatenate((a, b), axis=0)
 np.hsplit(arr, 2)
 np.vsplit(arr, 2)
 ```
+
+
+
+
+## Pandas 
+`import pandas as pd`
+
+## 1️⃣ Series (Basic Understanding Enough)
+```sh
+s = pd.Series([10,20,30])
+```
+
+Know:
+
+- It is 1D
+
+- Has index
+
+- Rarely used alone in ML
+
+👉 Just understand it. No deep focus needed.
+
+## 2️⃣ DataFrame (VERY IMPORTANT)
+
+This is the main thing.
+```sh
+df = pd.read_csv("data.csv")
+df.head()
+df.tail()
+df.shape
+df.columns
+df.info()
+df.describe()
+```
+
+🔥 Must know:
+
+Rows = samples
+
+Columns = features
+
+## 3️⃣ Selecting Data (VERY IMPORTANT)
+```sh
+df["column"]          # Single column
+df[["col1","col2"]]   # Multiple columns
+df.iloc[0:5, 0:3]     # Position based
+df.loc[0:5, "col1"]   # Label based
+```
+
+👉 `iloc` = index position
+👉 `loc` = label name
+
+Very common interview question.
+
+## 4️⃣ Missing Data (EXTREMELY IMPORTANT 🔥)
+```sh
+df.isnull()
+df.isnull().sum()
+df.dropna()
+df.fillna(0)
+df.fillna(df.mean())
+```
+
+🔥 In ML, handling missing data is compulsory.
+
+## 5️⃣ Filtering (VERY IMPORTANT)
+```sh
+df[df["age"] > 25]
+df[(df["age"] > 25) & (df["salary"] > 50000)]
+```
+
+⚠ Use `&` not `and`
+
+Used in:
+
+- Data cleaning
+
+- Feature filtering
+
+## 6️⃣ GroupBy (IMPORTANT)
+```sh
+df.groupby("department").mean()
+df.groupby("department")["salary"].sum()
+```
+
+Used in:
+
+- Data analysis
+
+- Feature engineering
+
+## 7️⃣ Merging / Joining (IMPORTANT for real projects)
+```sh
+pd.merge(df1, df2, on="id")
+```
+
+Know:
+
+- inner
+
+- left
+
+- right
+
+Used when combining datasets.
+
+## 8️⃣ Pivot Table (Basic Knowledge Enough)
+```sh
+pd.pivot_table(df, values="salary", index="department", aggfunc="mean")
+```
+
+Used in:
+
+- Data summarization
+
+## 9️⃣ Basic Operations (Must Know)
+```sh
+df["new_col"] = df["a"] + df["b"]
+df.sort_values("salary")
+df.drop("column", axis=1)
+df.rename(columns={"old":"new"})
+```
