@@ -272,7 +272,7 @@ np.vsplit(arr, 2)
 
 
 
-## Pandas 
+## Pandas ---> use this repo ---> ***https://github.com/AkarshVyas/Pandas-Youtube***
 `import pandas as pd`
 
 ## 1️⃣ Series (Basic Understanding Enough)
