@@ -1,1 +1,270 @@
 # ML-Learning
+## Numpy
+
+1️⃣ What is NumPy?
+
+ - NumPy = Numerical Python
+
+ - Why important for ML?
+
+ - Fast numerical computation (C backend)
+
+ - Works with arrays (ndarray)
+
+ - Base of Pandas, Scikit-learn, TensorFlow
+
+ - `import numpy as np`
+
+---
+
+2️⃣ Python List vs NumPy Array (Interview Question)
+## Python List vs NumPy Array
+
+| Python List | NumPy Array |
+|-------------|------------|
+| Slow | Fast |
+| Mixed data types | Same data type |
+| No vectorization | Supports vectorization |
+
+Example:
+
+np.array([1,2,3.5])
+# Converts all to float
+
+---
+
+## 3️⃣ Creating Arrays (Must Know)
+
+- `np.array([1,2,3])`
+- `np.arange(1,10,2)`
+- `np.zeros((3,4))`
+- `np.ones((2,2))`
+- `np.linspace(0,1,100)`
+
+> 👉 `linspace` is very useful in ML and plotting.
+
+---
+
+## 4️⃣ Random (VERY IMPORTANT for ML)
+
+### Used in:
+- Weight initialization
+- Train-test split
+- Simulation
+
+```python
+np.random.rand(5)        # Uniform distribution (0 to 1)
+np.random.randn(5)       # Normal distribution (mean = 0)
+np.random.randint(1,10,5)
+```
+
+---
+
+## 5️⃣ Array Properties (Interview Favorite)
+
+```python
+arr.shape
+arr.size
+arr.dtype
+arr.ndim
+```
+
+Example: `(3,4)`
+means 3 rows, 4 columns.
+
+---
+
+## 6️⃣ Axis Concept (EXTREMELY IMPORTANT 🔥)
+
+```python
+import numpy as np
+
+np.sum(arr, axis=0)  # Column-wise
+np.sum(arr, axis=1)  # Row-wise
+```
+
+👉 Axis Meaning
+
+`axis = 0` → Downwards (operate along rows, gives column result)
+
+`axis = 1` → Sideways (operate along columns, gives row result)
+
+📌 Used In:
+
+- Feature-wise mean
+- Normalization
+- ML preprocessing
+
+---
+
+## 7️⃣ Reshape (Very Common in ML)
+
+```python
+arr.reshape(5, 6)
+📌 Rule:
+rows × columns = total elements
+```
+🔥 Used before feeding data into ML models.
+
+---
+
+## 8️⃣ Indexing & Slicing
+
+### 📌 1D Array
+
+```python
+arr[2]
+arr[2:8:2]
+```
+### 📌 2D Array
+```
+arr[row, col]
+arr[:, 2]      # Whole column
+arr[2, :]      # Whole row
+```
+🔎 Important
+: → Take everything
+
+---
+
+## 9️⃣ Boolean Indexing (VERY POWERFUL 🔥)
+
+### 📌 Used For:
+
+- Data filtering
+- Feature selection
+
+---
+
+```python
+arr[arr > 10]
+arr[(arr > 10) & (arr < 20)]
+```
+
+⚠ Use & not and
+---
+
+## 🔟 View vs Copy (VERY IMPORTANT – INTERVIEW)
+
+```python
+slice = arr[2:5]
+This is a view.
+```
+
+If you modify slice → original array changes 😱
+
+✅ Safe Way
+```
+slice = arr[2:5].copy()
+```
+---
+
+## 1️⃣1️⃣ Vectorization (Core of NumPy)
+
+🚀 No loops needed
+
+```python
+a + b
+a * b
+a / b
+a ** 2
+```
+All operations are element-wise
+
+🔥 ML depends on this speed
+
+---
+
+## 1️⃣2️⃣ Broadcasting (VERY VERY IMPORTANT 🔥🔥)
+
+```python
+arr + 10
+```
+NumPy auto-adjusts shape
+
+📌 Rule (Simple)
+Shapes must be the same OR
+
+One dimension must be 1
+
+✅ Valid
+```
+(5, 5) + (5,)
+```
+❌ Invalid
+```
+(5, 5) + (4,)
+```
+📌 Used In
+- Feature scaling
+
+- Adding bias term
+
+- Neural networks
+---
+
+## 1️⃣3️⃣ Matrix Multiplication (ML Core)
+
+⚠ Most asked interview question
+
+```
+A * B        # element-wise
+np.dot(A,B)  # matrix multiplication
+A @ B        # modern way
+```
+
+Used in:
+
+- Linear Regression
+
+- Neural Networks
+
+- Deep Learning
+
+---
+
+## 1️⃣4️⃣ Important Math Functions
+
+```python
+arr.min()
+arr.max()
+arr.mean()
+arr.std()
+arr.sum()
+
+np.sqrt(arr)
+np.exp(arr)
+np.log(arr)
+```
+
+🔥 exp and log are heavily used in ML (Logistic Regression, Softmax)
+
+---
+
+## 1️⃣5️⃣ Transpose
+A.T
+`Converts row → column`
+
+Very important in:
+
+Linear algebra
+
+Gradient calculations
+
+---
+
+## 1️⃣6️⃣ Stacking & Splitting (Basic Knowledge Enough)
+
+### 📌 Stacking
+
+```python
+np.vstack((a, b))
+np.hstack((a, b))
+np.concatenate((a, b), axis=0)
+```
+
+📌 Splitting
+```
+np.hsplit(arr, 2)
+np.vsplit(arr, 2)
+```
