@@ -1,7 +1,7 @@
 # ML-Learning
-## Numpy
+## Numpy ---> use this github repo ---> ***https://github.com/AkarshVyas/Numpy-Youtube***
 
-1️⃣ What is NumPy?
+## 1️⃣ What is NumPy?
 
  - NumPy = Numerical Python
 
@@ -17,7 +17,7 @@
 
 ---
 
-2️⃣ Python List vs NumPy Array (Interview Question)
+## 2️⃣ Python List vs NumPy Array (Interview Question)
 ## Python List vs NumPy Array
 
 | Python List | NumPy Array |
