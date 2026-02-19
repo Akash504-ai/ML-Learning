@@ -441,3 +441,34 @@ Used to compare categories.
 ```py
 sns.histplot(data=df, x='age', hue='gender', kde=True)
 ```
+
+# 2.Boxplot ---> 
+
+🔹 Basic Syntax
+
+1️⃣ Single numerical column
+```py
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+sns.boxplot(x=df['salary'])
+plt.show()
+```
+2️⃣ Categorical vs Numerical (Very Important)
+```py
+sns.boxplot(x='gender', y='salary', data=df)
+```
+🔥 Important Parameters
+
+1️⃣ hue
+```py
+sns.boxplot(x='gender', y='salary', hue='department', data=df)
+```
+2️⃣ orient
+```py
+sns.boxplot(y=df['salary'])
+```
+3️⃣ showmeans
+```py
+sns.boxplot(x='salary', data=df, showmeans=True)
+```
