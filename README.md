@@ -399,5 +399,45 @@ df.rename(columns={"old":"new"})
 
 There has 4 imp thing ---> histplot, boxplot, heatmap, countplot
 
-# Histplot ---> 
+# 1.Histplot ---> 
 A histogram shows how a numerical variable is distributed by grouping values into ranges (bins).
+```py
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+sns.histplot(df['age'])
+plt.show()
+```
+🔥 Important Parameters ---> 
+
+1️⃣ bins
+
+Controls number of bars
+```py
+sns.histplot(df['age'], bins=20)
+```
+
+2️⃣ kde (Kernel Density Estimate)
+
+Adds smooth curve
+```py
+sns.histplot(df['age'], kde=True)
+```
+3️⃣ stat
+
+Controls what y-axis shows
+```py
+sns.histplot(df['age'], stat='count')      # default
+sns.histplot(df['age'], stat='density')
+sns.histplot(df['age'], stat='probability')
+```
+4️⃣ color
+```py
+sns.histplot(df['age'], color='red')
+```
+5️⃣ hue (Very Powerful)
+
+Used to compare categories.
+```py
+sns.histplot(data=df, x='age', hue='gender', kde=True)
+```
