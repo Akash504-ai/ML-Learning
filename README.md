@@ -480,3 +480,30 @@ sns.boxplot(x='salary', data=df, showmeans=True)
 # 3.Countplot
 
 A countplot shows the frequency (count) of each category in a categorical column.
+
+🔹 Basic Syntax
+```py
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+sns.countplot(x='gender', data=df)
+plt.show()
+```
+
+🔥 Other Important Parameters
+
+1️⃣ order (Sorting categories)
+```py
+sns.countplot(x='city', data=df,
+              order=df['city'].value_counts().index)
+```
+2️⃣ color
+```py
+sns.countplot(x='gender', data=df, color='green')
+```
+3️⃣ palette (Multiple colors)
+```py
+sns.countplot(x='gender', hue='survived', data=df,
+              palette='Set2')
+```
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/fb24d804-fd2a-493b-b040-eb192ab12c5a" />
