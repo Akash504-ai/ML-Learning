@@ -529,4 +529,7 @@ sns.heatmap(corr,
             linewidths=0.5)
 plt.show()
 ```
+fro the proper perfect size of the plot ---> `plt.figure(figsize=(6,4))`
+in this way we can use almost anywhere ---> `sns.heatmap(df.corr(numeric_only=True), annot=True)`
+
 <img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/c8e5133a-7c28-46cd-ad2a-069b1dcba8b1" />
