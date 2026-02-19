@@ -507,3 +507,25 @@ sns.countplot(x='gender', hue='survived', data=df,
               palette='Set2')
 ```
 <img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/fb24d804-fd2a-493b-b040-eb192ab12c5a" />
+
+
+# 4. Heatmap
+---> ✅ Basic Syntax
+```py
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+corr = df.corr()
+
+sns.heatmap(corr)
+plt.show()
+```
+🔥 Important Version (Use This in Real Projects)
+```py
+sns.heatmap(corr,
+            annot=True,       # show numbers
+            cmap='coolwarm',  # color theme
+            fmt='.2f',        # decimal format
+            linewidths=0.5)
+plt.show()
+```
