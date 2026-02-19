@@ -529,3 +529,4 @@ sns.heatmap(corr,
             linewidths=0.5)
 plt.show()
 ```
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/c8e5133a-7c28-46cd-ad2a-069b1dcba8b1" />
