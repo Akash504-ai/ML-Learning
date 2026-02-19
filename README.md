@@ -474,3 +474,9 @@ sns.boxplot(y=df['salary'])
 ```py
 sns.boxplot(x='salary', data=df, showmeans=True)
 ```
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/e60c233f-d8f1-4c8c-9d93-07891276d31c" />
+
+
+# 3.Countplot
+
+A countplot shows the frequency (count) of each category in a categorical column.
