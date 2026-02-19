@@ -396,3 +396,8 @@ df.rename(columns={"old":"new"})
 
 # Data Visualization
 ---> use this repo ---> ***https://github.com/AkarshVyas/Data-Visualization-Youtube***
+
+There has 4 imp thing ---> histplot, boxplot, heatmap, countplot
+
+# Histplot ---> 
+A histogram shows how a numerical variable is distributed by grouping values into ranges (bins).
